@@ -5,7 +5,7 @@ return {
 			lua = { "stylua" },
 			python = { "isort", "ruff" },
 			rust = { "rustfmt" },
-			--   go = {"gofmt"}
+			go = { "gofmt" },
 		},
 		format_on_save = {
 			timeout_ms = 500,

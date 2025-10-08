@@ -1,2 +1,2 @@
 require("config.lazy")
-vim.api.nvim_set_option("clipboard","unnamed")
+vim.api.nvim_set_option("clipboard", "unnamed")
