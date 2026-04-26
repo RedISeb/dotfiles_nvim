@@ -30,4 +30,16 @@ vim.opt.splitbelow = true
 
 vim.opt.scrolloff = 10
 
+-- Shims for outdated plugins using deprecated Neovim APIs
+vim.lsp.buf_get_clients = vim.lsp.get_clients
 
+local _validate = vim.validate
+vim.validate = function(opt, ...)
+  if type(opt) == 'table' then
+    for k, v in pairs(opt) do
+      _validate(k, v[1], v[2], v[3])
+    end
+  else
+    _validate(opt, ...)
+  end
+end
